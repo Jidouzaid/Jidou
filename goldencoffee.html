@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Golden Coffee | طلب عبر الواتساب</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #d4a762;
+            text-align: center;
+        }
+        h2 {
+            color: #a67c52;
+            border-bottom: 2px solid #d4a762;
+            padding-bottom: 5px;
+        }
+        .order-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+        input[type="number"] {
+            width: 60px;
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 14px;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            resize: vertical;
+        }
+        textarea {
+            height: 80px;
+        }
+        button {
+            background-color: #d4a762;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #c29555;
+        }
+        .total-price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #d4a762;
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f0e6d2;
+            border-radius: 5px;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #a67c52;
+            border-bottom: 1px solid #d4a762;
+            padding-bottom: 3px;
+        }
+        .payment-note {
+            margin-top: 15px;
+            background: #f0e6d2;
+            padding: 15px;
+            border-radius: 8px;
+            color: #5a4d2a;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Golden Coffee ☕</h1>
+        <div class="order-form">
+            <h2>أرسل طلبك</h2>
+            <form id="orderForm" onsubmit="return false;">
+                <div id="itemsList">
+                    <h3>Petit-déjeuner</h3>
+                    <label> Simple - 1500 MRU <input type="number" min="0" value="0" data-price="1500" data-name="Simple" /></label>
+                    <label>Complet- 2000 MRU <input type="number" min="0" value="0" data-price="2000" data-name="Complet" /></label>
+                    <label>Posse café - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Posse café" /></label>
+                    <label>Omelette simple - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Omelette simple" /></label>
+                    <label>Omelette fromage - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Omelette fromage" /></label>
+                    <label>Omelette Ton - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Omelette Ton" /></label>
+                    <label>Omelette Légumes - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Omelette Légumes" /></label>
+
+                    <h3>Jus</h3>
+                    <label>Jus mango - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Jus mango" /></label>
+                    <label>Jus d'orange - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Jus d'orange" /></label>
+                    <label>Jus avocat - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Jus avocat" /></label>
+                    <label>Cocktail - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Cocktail" /></label>
+                    <label>Zrig - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Zrig" /></label>
+
+                    <h3>Milkshake</h3>
+                    <label>Banana - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Banana" /></label>
+                    <label>Chocolat - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Chocolat" /></label>
+                    <label>Vanilla - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Vanilla" /></label>
+                    <label>Fraise - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Fraise" /></label>
+
+                    <h3>Coffee</h3>
+                    <label>Espresso - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Espresso" /></label>
+                    <label>Allongé - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Allongé" /></label>
+                    <label>Soudani - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Soudani" /></label>
+                    <label>Nes-Nes - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Nes-Nes" /></label>
+                    <label>Café au lait - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Café au lait" /></label>
+                    <label>Cappuccino - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Cappuccino" /></label>
+                    <label>Chocolat chaud - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Chocolat chaud" /></label>
+
+                    <h3>Chicha</h3>
+                    <label>Mante - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Mante" /></label>
+                    <label>Pompe - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Pompe" /></label>
+                    <label>Mixte - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Mixte" /></label>
+                    <label>Love - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Love" /></label>
+                    <label>Mi amor - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Mi amor" /></label>
+                    <label>Huawei - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Huawei" /></label>
+                    <label>Double Mellon - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Double Mellon" /></label>
+                    <label>Check money - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Check money" /></label>
+                    <label>Lady killer - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Lady killer" /></label>
+
+                    <h3>Mojito & Thé</h3>
+                    <label>Café latte - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Café latte" /></label>
+                    <label>Lipton simple - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Lipton simple" /></label>
+                    <label>Lipton au lait - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Lipton au lait" /></label>
+                    <label>Strawberry - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Strawberry" /></label>
+                    <label>Lipton citron - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Lipton citron" /></label>
+                    <label>Blueberry - 1000 MRU <input type="number" min="0" value="0" data-price="1000" data-name="Blueberry" /></label>
+                    <label>Thé Mauritanie - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Thé Mauritanie" /></label>
+                    <label>Thé Marocain - 500 MRU <input type="number" min="0" value="0" data-price="500" data-name="Thé Marocain" /></label>
+                </div>
+
+                <textarea id="notes" placeholder="ملاحظات (مثل: درجة الحلاوة، إضافات خاصة)"></textarea>
+                <input type="text" id="tableNumber" placeholder="رقم الطاولة (مطلوب)" required />
+
+                <div class="total-price" id="totalPrice">الإجمالي: 0 MRU</div>
+
+                <button type="button" onclick="sendOrder()">
+                    إرسال الطلب عبر واتساب
+                </button>
+
+                <div class="payment-note">
+                    عزيزي الزبون يمكنك الدفع عبر الأرقام الظاهرة في الأسفل :<br>
+                    • Bankily 20703377<br>
+                    • Sedad 20703377<br>
+                    • Masrivi 49609968
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script>
+    const itemInputs = document.querySelectorAll('#itemsList input[type="number"]');
+
+    itemInputs.forEach(input => {
+        input.addEventListener('input', updateTotal);
+    });
+
+    function updateTotal() {
+        let total = 0;
+        itemInputs.forEach(input => {
+            const quantity = parseInt(input.value) || 0;
+            const price = parseInt(input.dataset.price);
+            total += quantity * price;
+        });
+        document.getElementById("totalPrice").textContent = `الإجمالي: ${total} MRU`;
+    }
+
+    function sendOrder() {
+        const selectedItems = [];
+        itemInputs.forEach(input => {
+            const quantity = parseInt(input.value);
+            const name = input.dataset.name;
+            const price = parseInt(input.dataset.price);
+            if (quantity && quantity > 0) {
+                selectedItems.push(`${name} x${quantity} - ${quantity * price} MRU`);
+            }
+        });
+
+        const notes = document.getElementById("notes").value.trim();
+        const tableNumber = document.getElementById("tableNumber").value.trim();
+
+        if (selectedItems.length === 0) {
+            alert("الرجاء اختيار عنصر واحد على الأقل.");
+            return;
+        }
+        if (!tableNumber) {
+            alert("الرجاء إدخال رقم الطاولة.");
+            return;
+        }
+
+        const orderMessage = `طلب جديد من Golden Coffee:\n\n🧾 العناصر:\n${selectedItems.join("\n")}\n\n📌 رقم الطاولة: ${tableNumber}\n📋 ملاحظات: ${notes || "لا توجد"}`;
+
+        const whatsappNumber = "22233703377";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderMessage)}`;
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
+</body>
+</html>
